@@ -16,12 +16,12 @@ function App() {
     { itemName: "Item3", quantity: 2, isSelected: false },
   ]);
 
-  const [namet, setInputValue] = useState("");
+  const [InputValue, setInputValue] = useState("");
   const [totalItemCount, setTotalItemCount] = useState(0);
 
   const handleAddButtonClicked = () => {
     const newItem = {
-      itemName: namet,
+      itemName: InputValue,
       quantity: 1,
       isSelected: false,
     };
@@ -29,7 +29,7 @@ function App() {
 
     setItems(newItems);
     setInputValue("");
-    //calculateTotl();
+    calculateTotal();
   };
 
   const handleQuantityIncrease = (index) => {
@@ -67,7 +67,7 @@ function App() {
       <div className="main-container">
         <div className="add-item-box">
           <input
-            //value={namet}
+            value={InputValue}
             onChange={(e) => setInputValue(e.target.value)}
             className="add-item-input"
             placeholder="Add an item...."
